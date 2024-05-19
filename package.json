@@ -9,6 +9,7 @@
   "categories": [
     "Other"
   ],
+  "icon": "images/logos.png",
   "main": "./out/extension.js",
   "contributes": {
     "viewsContainers": {
@@ -16,7 +17,7 @@
         {
           "id": "chatAI",
           "title": "Chat AI",
-          "icon": "resources/chat-ai-icon.jpg"
+          "icon": "images/logos.png"
         }
       ]
     },

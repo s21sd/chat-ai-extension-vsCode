@@ -59,9 +59,53 @@ function getWebviewContent() {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Chat AI</title>
+	  <style>
+	  body {
+		font-family: Arial, sans-serif;
+		padding: 20px;
+		background-color: black;
+	  }
+	  .heading{
+		color:#FEC400;
+	  }
+	  #chat-container {
+		display: flex;
+		flex-direction: column;
+		height: 80vh;
+		
+	  }
+	  #chat-output {
+		flex: 1;
+		padding: 10px;
+		border: 1px solid #ccc;
+		background-color: #FEC400;
+		color:#706d6d;
+		overflow-y: auto;
+		margin-bottom: 10px;
+		font-size:16px;
+		border-radius:16px;
+	  }
+	  #user-input {
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		margin-bottom: 10px;
+	  }
+	  button {
+		padding: 10px 20px;
+		background-color: #FEC400;
+		color: black;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	  }
+	  button:hover {
+		background-color: #f5d056;
+	  }
+	</style>
     </head>
     <body>
-      <h1>Chat with AI</h1>
+      <h1 class="heading">Chat with AI</h1>
       <div id="chat-container">
         <div id="chat-output"></div>
         <input type="text" id="user-input" placeholder="Type a message..." />
@@ -75,7 +119,7 @@ function getWebviewContent() {
         function sendMessage() {
           const userMessage = userInput.value;
           if (userMessage.trim()) {
-            chatOutput.innerHTML += '<div>User: ' + userMessage + '</div>';
+            chatOutput.innerHTML += '<div style="margin-top:20px;"><span style="color:black; font-weight: bold; font-size:20px;">User:</span> ' + userMessage + '</div>';
             userInput.value = '';
 
             // Send message to the extension
@@ -90,7 +134,7 @@ function getWebviewContent() {
           const message = event.data;
           switch (message.command) {
             case 'receiveMessage':
-              chatOutput.innerHTML += '<div>AI: ' + message.text + '</div>';
+              chatOutput.innerHTML += '<div><span style="color:black; font-weight: bold; font-size:20px;">AI:</span> ' + message.text + '</div>';
               break;
           }
         });
