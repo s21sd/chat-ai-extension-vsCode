@@ -66,7 +66,31 @@ function getWebviewContent() {
 		background-color: black;
 	  }
 	  .heading{
-		color:#FEC400;
+		color:white; 
+		font-weight: bold;
+		font-size:20px;
+		border-radius:16px;
+		background: radial-gradient(circle, rgba(247, 150, 192, 1) 0%, rgba(118, 174, 241, 1) 100%);
+		padding:7px;
+		width:fit-content;
+	  }
+	  .userheading{
+		color:white; 
+		font-weight: bold;
+		font-size:20px;
+		border-radius:16px;
+		background: radial-gradient(circle, rgba(247, 150, 192, 1) 0%, rgba(118, 174, 241, 1) 100%);
+		padding:7px;
+	  }
+	  .aiheading{
+		color:white; 
+		font-weight: bold;
+		font-size:20px;
+		border-radius:16px;
+		margin-top:10px;
+		background: radial-gradient(circle, rgba(247, 150, 192, 1) 0%, rgba(118, 174, 241, 1) 100%);
+		padding:7px;
+		
 	  }
 	  #chat-container {
 		display: flex;
@@ -79,7 +103,7 @@ function getWebviewContent() {
 		padding: 10px;
 		border: 1px solid #ccc;
 		background-color: #FEC400;
-		color:#706d6d;
+		color:black;
 		overflow-y: auto;
 		margin-bottom: 10px;
 		font-size:16px;
@@ -93,15 +117,13 @@ function getWebviewContent() {
 	  }
 	  button {
 		padding: 10px 20px;
-		background-color: #FEC400;
-		color: black;
+		color: white;
 		border: none;
 		border-radius: 4px;
 		cursor: pointer;
+		background: radial-gradient(circle, rgba(247, 150, 192, 1) 0%, rgba(118, 174, 241, 1) 100%);
 	  }
-	  button:hover {
-		background-color: #f5d056;
-	  }
+
 	</style>
     </head>
     <body>
@@ -119,7 +141,7 @@ function getWebviewContent() {
         function sendMessage() {
           const userMessage = userInput.value;
           if (userMessage.trim()) {
-            chatOutput.innerHTML += '<div style="margin-top:20px;"><span style="color:black; font-weight: bold; font-size:20px;">User:</span> ' + userMessage + '</div>';
+            chatOutput.innerHTML += '<div style="margin-top:20px;"><span class="userheading">User:</span> ' + userMessage + '</div>';
             userInput.value = '';
 
             // Send message to the extension
@@ -134,7 +156,7 @@ function getWebviewContent() {
           const message = event.data;
           switch (message.command) {
             case 'receiveMessage':
-              chatOutput.innerHTML += '<div><span style="color:black; font-weight: bold; font-size:20px;">AI:</span> ' + message.text + '</div>';
+              chatOutput.innerHTML += '<div style="margin-top:20px;"><span class="aiheading">AI:</span> ' + message.text + '</div>';
               break;
           }
         });

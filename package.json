@@ -1,7 +1,8 @@
 {
   "name": "chat-ai",
   "displayName": "chat-ai-extension",
-  "description": "",
+  "description": "A Chat bot ",
+  "icon": "resources/icon.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.89.0"
@@ -9,7 +10,6 @@
   "categories": [
     "Other"
   ],
-  "icon": "images/logos.png",
   "main": "./out/extension.js",
   "contributes": {
     "viewsContainers": {
@@ -17,7 +17,7 @@
         {
           "id": "chatAI",
           "title": "Chat AI",
-          "icon": "images/logos.png"
+          "icon": "resources/chatbot2-icon.svg"
         }
       ]
     },
